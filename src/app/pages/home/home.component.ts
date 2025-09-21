@@ -1,6 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { OlympicService } from 'src/app/core/services/olympic.service';
+
+export type ChartOptions = {
+  series: ApexNonAxisChartSeries;
+  chart: ApexChart;
+  responsive: ApexResponsive[];
+  labels: any;
+  stroke: ApexStroke;
+  fill: ApexFill;
+};
 
 @Component({
   selector: 'app-home',
@@ -8,11 +16,39 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  public olympics$: Observable<any> = of(null);
+  @ViewChild("chart") chart: ChartComponent;
+  public chartOptions: Partial<ChartOptions>;
+  
 
-  constructor(private olympicService: OlympicService) {}
+    constructor() {
+    this.chartOptions = {
+      series: [14, 23, 21, 17, 15, 10, 12, 17, 21],
+      chart: {
+        type: "polarArea"
+      },
+      stroke: {
+        colors: ["#fff"]
+      },
+      fill: {
+        opacity: 0.8
+      },
+      responsive: [
+        {
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200
+            },
+            legend: {
+              position: "bottom"
+            }
+          }
+        }
+      ]
+    };
+  }
 
   ngOnInit(): void {
-    this.olympics$ = this.olympicService.getOlympics();
+    
   }
 }

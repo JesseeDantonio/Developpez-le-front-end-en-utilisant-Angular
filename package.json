@@ -18,13 +18,14 @@
     "@angular/platform-browser": "^18.0.3",
     "@angular/platform-browser-dynamic": "^18.0.3",
     "@angular/router": "^18.0.3",
+    "apexcharts": "^5.3.5",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.0.3",
-    "@angular/cli": "^18.0.3",
+    "@angular/cli": "^18.2.21",
     "@angular/compiler-cli": "^18.0.3",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.1.0",
