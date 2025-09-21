@@ -1,4 +1,13 @@
 // TODO: create here a typescript interface for a participation
+
+interface Participation {
+    id: Number,
+    year: Number,
+    city: String,
+    medalsCount: Number,
+    athleteCount: Number
+}
+
 /*
 example of participation:
 {
