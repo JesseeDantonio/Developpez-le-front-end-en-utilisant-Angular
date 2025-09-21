@@ -1,55 +1,30 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Component } from "@angular/core";
+import { ApexAxisChartSeries, ApexChart, ApexXAxis, ApexStroke, ApexResponsive, ApexTitleSubtitle, NgApexchartsModule } from "ng-apexcharts";
 
 export type ChartOptions = {
-  series: ApexNonAxisChartSeries;
+  series: ApexAxisChartSeries;
   chart: ApexChart;
-  responsive: ApexResponsive[];
-  labels: any;
+  xaxis: ApexXAxis;
   stroke: ApexStroke;
-  fill: ApexFill;
+  responsive: ApexResponsive[];
+  title: ApexTitleSubtitle;
 };
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss'],
-    standalone: false
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  standalone: true,
+  imports: [NgApexchartsModule]
 })
-export class HomeComponent implements OnInit {
-  @ViewChild("chart") chart: ChartComponent;
-  public chartOptions: Partial<ChartOptions>;
-  
-
-    constructor() {
-    this.chartOptions = {
-      series: [14, 23, 21, 17, 15, 10, 12, 17, 21],
-      chart: {
-        type: "polarArea"
-      },
-      stroke: {
-        colors: ["#fff"]
-      },
-      fill: {
-        opacity: 0.8
-      },
-      responsive: [
-        {
-          breakpoint: 480,
-          options: {
-            chart: {
-              width: 200
-            },
-            legend: {
-              position: "bottom"
-            }
-          }
-        }
-      ]
-    };
-  }
-
-  ngOnInit(): void {
-    
-  }
+export class HomeComponent {
+  public chartOptions: ChartOptions = {
+    series: [
+      { name: "sales", data: [30, 40, 45, 50] }
+    ],
+    chart: { type: "polarArea", height: 350 },
+    xaxis: { categories: [1991, 1992, 1993, 1994] },
+    stroke: { curve: "smooth" },
+    responsive: [],
+    title: { text: "Exemple" }
+  };
 }

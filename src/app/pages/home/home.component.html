@@ -1,3 +1,8 @@
-<h2>Olympic games app</h2>
-<hr />
-<p>{{ (olympics$ | async)?.length }} data loaded</p>
+<apx-chart
+  [series]="chartOptions.series"
+  [chart]="chartOptions.chart"
+  [xaxis]="chartOptions.xaxis"
+  [stroke]="chartOptions.stroke"
+  [responsive]="chartOptions.responsive"
+  [title]="chartOptions.title"
+></apx-chart>
