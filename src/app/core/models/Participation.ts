@@ -1,6 +1,6 @@
 // TODO: create here a typescript interface for a participation
 
-interface Participation {
+export interface Participation {
     id: Number,
     year: Number,
     city: String,
