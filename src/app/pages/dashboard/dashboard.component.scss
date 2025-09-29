@@ -1,0 +1,45 @@
+$primary: #04838f;
+$breakpoint-mobile: 600px;
+
+#container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+#sub-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+#title {
+    color: white;
+    background-color: $primary;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-radius: 10px;
+}
+
+.stats-item {
+    border: #04838f 2px solid;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+h1, h3 {
+    margin: 0;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  #sub-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

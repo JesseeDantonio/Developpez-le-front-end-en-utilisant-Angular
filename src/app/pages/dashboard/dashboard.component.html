@@ -1,7 +1,25 @@
-<p>dashboard works!</p>
+<div id="container">
+    <div id="title">
+        <h1>Medals per Country</h1>
+    </div>
+    <div>
+        <div id="sub-container">
+            <div class="stats-item">
+                <h3>
+                    Number of JOs {{ numberJOs }}
+                </h3>
+            </div>
+            <div class="stats-item">
+                <h3>
+                    Number of countries {{ numberCountries }}
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
 
 @if (chartOptions) {
-    <apx-chart  [series]="chartOptions.series" [chart]="chartOptions.chart" [labels]="chartOptions.labels" 
-    [title]="chartOptions.title" [tooltip]="chartOptions.tooltip">
-    </apx-chart>
+<apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [labels]="chartOptions.labels"
+    [tooltip]="chartOptions.tooltip">
+</apx-chart>
 }
