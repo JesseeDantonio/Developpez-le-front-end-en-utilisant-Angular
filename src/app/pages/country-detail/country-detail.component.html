@@ -1,7 +1,33 @@
-<p>country-detail works!</p>
+<div id="container">
+    <div id="title">
+        <h1>{{ nameCountry }}</h1>
+    </div>
+    <div>
+        <div id="sub-container">
+            <div class="stats-item">
+                <h3>
+                    Number of entries {{ totalEntries }}
+                </h3>
+            </div>
+            <div class="stats-item">
+                <h3>
+                    Total number medals {{ totalMedals }}
+                </h3>
+            </div>
+            <div class="stats-item">
+                <h3>
+                    Total number of athletes {{ totalAthletes }}
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 @if (chartOptions) {
-    <apx-chart  [series]="chartOptions.series" [chart]="chartOptions.chart" [labels]="chartOptions.labels" 
+<apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [labels]="chartOptions.labels"
     [title]="chartOptions.title" [tooltip]="chartOptions.tooltip" [xaxis]="chartOptions.xaxis">
-    </apx-chart>
+</apx-chart>
 }
+
+<button (click)="goToDashboard()">Go back</button>
