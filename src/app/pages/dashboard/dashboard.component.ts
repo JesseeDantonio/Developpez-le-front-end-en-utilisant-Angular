@@ -57,6 +57,9 @@ export class DashboardComponent implements OnInit {
             },
           },
         },
+        xaxis: {
+          categories: []
+        },
         title: { text: '' },
         tooltip: {
           y: {
