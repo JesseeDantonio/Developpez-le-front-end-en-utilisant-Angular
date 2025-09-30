@@ -1,19 +1,79 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { Observable, Subscription } from 'rxjs';
+import { Olympic } from 'src/app/core/models/Olympic';
+import { Participation } from 'src/app/core/models/Participation';
+import { PieChartOptions } from 'src/app/core/types/PieChartOptions';
 
 @Component({
   selector: 'app-country-detail',
   templateUrl: './country-detail.component.html',
-  standalone: false,
+  imports: [NgApexchartsModule],
   styleUrl: './country-detail.component.scss'
 })
-export class CountryDetailComponent implements OnInit {
+export class CountryDetailComponent implements OnInit, OnDestroy {
 
-  public country : string | null | undefined;
+  public countryID: string | null | undefined;
+  public chartOptions: PieChartOptions | undefined;
+  public ref: Subscription | undefined;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+
+  ngOnDestroy(): void {
+    this.ref?.unsubscribe();
+  }
 
   ngOnInit(): void {
-    this.country = this.route.snapshot.paramMap.get('name');
+    this.countryID = this.route.snapshot.paramMap.get('id')?.valueOf();
+    this.ref = this.http.get<Olympic[]>('assets/mock/olympic.json').subscribe(data => {
+      
+      if (this.countryID) {
+        const countryFind = data.find((country: Olympic) => {
+          return Number(this.countryID) == country.id;
+        });
+        
+        if (countryFind) {
+          
+          const serieData: Olympic | undefined = data.find((country: Olympic) => {
+            return country.id == Number(this.countryID);
+          });
+          
+          if (serieData) {
+            const medalsSerie = {
+              name: 'Nombre de médailles',
+              data: serieData.participations.map(p => p.medalsCount)
+            };
+            const athletesSerie = {
+              name: "Nombre d'athlètes",
+              data: serieData.participations.map(p => p.athleteCount)
+            };
+            
+            const labels = serieData.participations.map(p => `${p.year} - ${p.city}`);
+            
+            this.chartOptions = {
+              labels,
+              series: [medalsSerie, athletesSerie],
+              chart: {
+                type: "line",
+                height: 350
+              },
+              xaxis: {
+                categories: labels
+              },
+              title: { text: "Evolution du pays par édition des JO" },
+              tooltip: {
+                y: {
+                  formatter: (val: number) => `${val}`
+                }
+              }
+            };
+          }
+        }
+      }
+    });
+    console.log(this.ref)
   }
 }
+
