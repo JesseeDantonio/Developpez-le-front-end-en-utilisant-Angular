@@ -8,21 +8,21 @@
         "year": 2012,
         "city": "Londres",
         "medalsCount": 28,
-        "athleteCount": 372
+        "athleteCount": 285
       },
       {
         "id": 2,
         "year": 2016,
         "city": "Rio de Janeiro",
         "medalsCount": 28,
-        "athleteCount": 375
+        "athleteCount": 314
       },
       {
         "id": 3,
         "year": 2020,
         "city": "Tokyo",
         "medalsCount": 40,
-        "athleteCount": 381
+        "athleteCount": 384
       }
     ]
   },
@@ -34,15 +34,15 @@
         "id": 1,
         "year": 2012,
         "city": "Londres",
-        "medalsCount": 20,
-        "athleteCount": 315
+        "medalsCount": 17,
+        "athleteCount": 282
       },
       {
         "id": 2,
         "year": 2016,
         "city": "Rio de Janeiro",
         "medalsCount": 17,
-        "athleteCount": 312
+        "athleteCount": 306
       },
       {
         "id": 3,
@@ -61,22 +61,22 @@
         "id": 1,
         "year": 2012,
         "city": "Londres",
-        "medalsCount": 109,
-        "athleteCount": 610
+        "medalsCount": 104,
+        "athleteCount": 530
       },
       {
         "id": 2,
         "year": 2016,
         "city": "Rio de Janeiro",
-        "medalsCount": 123,
-        "athleteCount": 652
+        "medalsCount": 121,
+        "athleteCount": 554
       },
       {
         "id": 3,
         "year": 2020,
         "city": "Tokyo",
         "medalsCount": 113,
-        "athleteCount": 626
+        "athleteCount": 613
       }
     ]
   },
@@ -89,14 +89,14 @@
         "year": 2012,
         "city": "Londres",
         "medalsCount": 44,
-        "athleteCount": 425
+        "athleteCount": 392
       },
       {
         "id": 2,
         "year": 2016,
         "city": "Rio de Janeiro",
-        "medalsCount": 44,
-        "athleteCount": 422
+        "medalsCount": 42,
+        "athleteCount": 425
       },
       {
         "id": 3,
@@ -115,22 +115,22 @@
         "id": 1,
         "year": 2012,
         "city": "Londres",
-        "medalsCount": 35,
-        "athleteCount": 423
+        "medalsCount": 34,
+        "athleteCount": 330
       },
       {
         "id": 2,
         "year": 2016,
         "city": "Rio de Janeiro",
-        "medalsCount": 45,
-        "athleteCount": 412
+        "medalsCount": 42,
+        "athleteCount": 401
       },
       {
         "id": 3,
         "year": 2020,
         "city": "Tokyo",
         "medalsCount": 33,
-        "athleteCount": 403
+        "athleteCount": 378
       }
     ]
   }
