@@ -1,3 +1,5 @@
+
+@if (chartOptions) {
 <div id="container">
     <div id="title">
         <h1>{{ nameCountry }}</h1>
@@ -23,11 +25,11 @@
     </div>
 </div>
 
-
-@if (chartOptions) {
 <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [labels]="chartOptions.labels"
     [title]="chartOptions.title" [tooltip]="chartOptions.tooltip" [xaxis]="chartOptions.xaxis">
 </apx-chart>
+} @else {
+    <h3>Cet ID n'existe pas</h3>
 }
 
 <button (click)="goToDashboard()">Go back</button>
