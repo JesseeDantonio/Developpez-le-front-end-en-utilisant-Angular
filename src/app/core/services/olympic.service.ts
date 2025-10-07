@@ -5,7 +5,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { Olympic } from '../models/Olympic';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class OlympicService {
   private readonly olympicUrl: string = './assets/mock/olympic.json';
@@ -17,7 +17,7 @@ export class OlympicService {
   }
 
   loadInitialData(): Subscription {
-    return this.http.get<any>(this.olympicUrl).pipe(
+    return this.http.get<Olympic[]>(this.olympicUrl).pipe(
       tap((value) => this.olympicsSubject$.next(value)),
       catchError((error, caught) => {
         console.error('[OlympicService] loadOlympics failed', error);
