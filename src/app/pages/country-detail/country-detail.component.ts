@@ -11,6 +11,7 @@ import { PieChartOptions } from 'src/app/core/types/PieChartOptions';
 @Component({
   selector: 'app-country-detail',
   templateUrl: './country-detail.component.html',
+  standalone: true,
   imports: [NgApexchartsModule],
   styleUrl: './country-detail.component.scss',
 })

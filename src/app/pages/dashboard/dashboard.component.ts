@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { Router } from '@angular/router';
 import { Subscription, filter } from 'rxjs';
@@ -10,7 +9,7 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [NgApexchartsModule, HttpClientModule],
+  imports: [NgApexchartsModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })

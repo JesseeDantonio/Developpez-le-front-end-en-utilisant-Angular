@@ -1,16 +1,19 @@
 import { enableProdMode } from '@angular/core';
 import { environment } from './environments/environment';
 import { bootstrapApplication, platformBrowser } from '@angular/platform-browser';
+import { routes } from './app/app-routing.module'
 import { AppModule } from './app/app.module';
+import { provideHttpClient } from '@angular/common/http';
+import { provideRouter } from '@angular/router';
+import { AppComponent } from './app/app.component';
 
 if (environment.production) {
   enableProdMode();
 }
 
-// Méthode Nouvelle Standalone
-// bootstrapApplication(AppComponent, {
-//   providers: [provideHttpClient()]
-// });
-
-platformBrowser().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideRouter(routes),
+    provideHttpClient(),
+  ],
+}).catch((err) => console.error(err));
