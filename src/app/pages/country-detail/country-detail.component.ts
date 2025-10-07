@@ -26,7 +26,6 @@ export class CountryDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient,
     private router: Router,
     private olympicService: OlympicService
   ) { }
